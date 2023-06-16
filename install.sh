@@ -1,6 +1,7 @@
 echo "Downloading Essestial Dotfiles"
 
-export DOTFILE_URL = https://raw.githubusercontent.com/isumitkrsaha/dotfiles/main/
+DOTFILE_URL = https://raw.githubusercontent.com/isumitkrsaha/dotfiles/main/
+export DOTFILE_URL
 
 curl $DOTFILE_URL/.bash_helper --output .bash_helper 
 curl $DOTFILE_URL/.inputrc --output .inputrc 
