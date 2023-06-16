@@ -1,15 +1,20 @@
 echo "Downloading Essestial Dotfiles"
 
-export DOTFILE_URL = https://raw.githubusercontent.com/isumitkrsaha/dotfiles/main/
+URL="https://raw.githubusercontent.com/isumitkrsaha/dotfiles/main/"
+OUT="~/"
 
-curl $DOTFILE_URL/.bash_helper --output .bash_helper 
-curl $DOTFILE_URL/.inputrc --output .inputrc 
+echo "== bash helper"
+wget --output-document $OUT.bash_helper $URL.bash_helper
+wget --output-document $OUT.inputrc $URL.inputrc
 
-curl $DOTFILE_URL/.gitconfig --output .gitconfig 
-curl $DOTFILE_URL/.gitignore_global --output .gitignore_global 
-curl $DOTFILE_URL/.gitmessage.txt --output .gitmessage.txt 
+echo "== git helper"
+wget --output-document $OUT.gitconfig $URL.gitconfig
+wget --output-document $OUT.gitignore_global $URL.gitignore_global
+wget --output-document $OUT.gitmessage.txt $URL.gitmessage.txt
 
-curl $DOTFILE_URL/.vimrc --output .vimrc
+echo "== vim helper"
+wget --output-document $OUT.vimrc $URL.vimrc
 
-curl $DOTFILE_URL/.condarc --output .condarc
-curl $DOTFILE_URL/.pylintrc --output .pylintrc
+echo "== python helper"
+wget --output-document $OUT.condarc $URL.condarc
+wget --output-document $OUT.pylintrc $URL.pylintrc
