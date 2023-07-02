@@ -13,6 +13,16 @@ wget --output-document $HOME/.gitmessage.txt $URL/.gitmessage.txt
 
 echo "== vim helper"
 wget --output-document $HOME/.vimrc $URL/.vimrc
+git clone --depth 1 https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start/sensible
+git clone --depth 1 https://tpope.io/vim/sleuth.git ~/.vim/pack/tpope/start/sleuth
+vim -u NONE -c "helptags sleuth/doc" -c q
+git clone --depth 1 https://tpope.io/vim/commentary.git ~/.vim/pack/tpope/start/commentary
+vim -u NONE -c "helptags commentary/doc" -c q
+git clone --depth 1 https://github.com/tpope/vim-flagship.git ~/.vim/pack/tpope/start/vim-flagship
+vim -u NONE -c "helptags vim-flagship/doc" -c q
+git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/plugins/start/vim-polyglot
+git clone --depth 1 https://github.com/Raimondi/delimitMate ~/.vim/pack/plugins/start/delimitMate
+
 
 echo "== python helper"
 wget --output-document $HOME/.condarc $URL/.condarc

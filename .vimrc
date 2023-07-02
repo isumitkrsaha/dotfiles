@@ -1,61 +1,23 @@
-" Set filetype to unix
-set fileformat=unix
+let mapleader = ","		" TODO: Pick a leader key
 
-" Don't try to be vi compatible
-set nocompatible
-
-" Turn on syntax highlighting
-syntax on
-
-" For plugins to load correctly
-filetype plugin indent on
-
-" TODO: Pick a leader key
-let mapleader = ","
-
-" Security
-set modelines=0
-
-" Show line numbers
-set number
-
-" Show file stats
-set ruler
-
-" no Blink cursor on error instead of beeping (grr)
-set novisualbell
-
-
-" Encoding
-set encoding=utf-8
+set number						" Show line numbers
+set ruler							" Show file stats
+set novisualbell			" no Blink cursor on error instead of beeping (grr)
+set hidden						" Allow hidden buffers
+set ttyfast						" Rendering
 
 " Whitespace
 set wrap
 set textwidth=80
 set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set noshiftround
 
 " Cursor motion
 set scrolloff=3
-set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
-
-" Allow hidden buffers
-set hidden
-
-" Rendering
-set ttyfast
-
-" Status bar
-set laststatus=2
 
 " Last line
 set showmode
@@ -64,12 +26,6 @@ set showcmd
 " Searching
 nnoremap / /\v
 vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
