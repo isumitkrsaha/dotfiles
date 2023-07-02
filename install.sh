@@ -11,6 +11,9 @@ wget --output-document $HOME/.gitconfig $URL/.gitconfig
 wget --output-document $HOME/.gitignore_global $URL/.gitignore_global
 wget --output-document $HOME/.gitmessage.txt $URL/.gitmessage.txt
 
+echo "== tmux helper"
+wget --output-document $HOME/.tmux.conf $URL/.tmux.conf
+
 echo "== vim helper"
 wget --output-document $HOME/.vimrc $URL/.vimrc
 git clone --depth 1 https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start/sensible
