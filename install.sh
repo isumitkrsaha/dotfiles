@@ -25,8 +25,17 @@ git clone --depth 1 https://github.com/tpope/vim-flagship.git ~/.vim/pack/tpope/
 vim -u NONE -c "helptags vim-flagship/doc" -c q
 git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/plugins/start/vim-polyglot
 git clone --depth 1 https://github.com/Raimondi/delimitMate ~/.vim/pack/plugins/start/delimitMate
-
+git clone --depth 1 https://tpope.io/vim/endwise.git ~/.vim/pack/tpope/start/endwise
+git clone --depth 1 https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+git clone --depth 1 https://github.com/tpope/vim-vinegar.git ~/.vim/pack/tpope/start/vim-vinegar
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
 
 echo "== python helper"
 wget --output-document $HOME/.condarc $URL/.condarc
 wget --output-document $HOME/.pylintrc $URL/.pylintrc
+
+# WSL stuff
+if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+  wget --output-document $HOME/.wsl_helper $URL/.wsl_helper
+fi

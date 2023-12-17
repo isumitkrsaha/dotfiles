@@ -1,0 +1,7 @@
+# >>> clone ssh folder from windows
+function ssh_clone {
+  rm -rf ~/.ssh & mkdir ~/.ssh
+  cp /mnt/c/Users/sumit/.ssh/* ~/.ssh/ & rm -f ~/.ssh/known_hosts*
+  chmod 700 ~/.ssh & chmod 400 ~/.ssh/* & chmod 600 ~/.ssh/config
+}
+# <<<
