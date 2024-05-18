@@ -1,3 +1,20 @@
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-flagship'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-vinegar'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'Raimondi/delimitMate'
+Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-wombat-scheme'
+call plug#end()
+
 " Pick a leader key
 let mapleader = ","		
 
@@ -46,8 +63,12 @@ map <leader>w :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
 set t_Co=256
+if (has("termguicolors"))
+  set termguicolors
+endif
 set background=dark
-colorscheme default
+colorscheme wombat
+let g:lightline = { 'colorscheme': 'wombat' }
 
 " tabline design
 nnoremap <leader>1 1gt
