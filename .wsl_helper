@@ -1,7 +1,27 @@
+# Windows user profile
+WINDOW_HOME=/mnt/c/Users/Sumit
+
+# file explorer
+open () {
+  explorer.exe `wslpath -w "$PWD/$1"`
+}
+
 # >>> clone ssh folder from windows
-function ssh_clone {
-  rm -rf ~/.ssh & mkdir ~/.ssh
-  cp /mnt/c/Users/sumit/.ssh/* ~/.ssh/ & rm -f ~/.ssh/known_hosts*
-  chmod 700 ~/.ssh & chmod 400 ~/.ssh/* & chmod 600 ~/.ssh/config
+ssh_clone () {
+  rm -rf ~/.ssh && mkdir ~/.ssh
+  cp -r $WINDOW_HOME/.ssh/* ~/.ssh/ && rm -f ~/.ssh/known_hosts*
+  
+  # change folder permission
+  for i in $(find ~/.ssh/ -type d)
+  do
+    chmod 700 $i
+  done
+
+  # change file permission
+  for i in $(find ~/.ssh/ -type f)
+  do
+    chmod 400 $i
+  done
+  chmod 600 ~/.ssh/config
 }
 # <<<
