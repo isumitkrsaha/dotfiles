@@ -1,8 +1,9 @@
 [user]
-        name = sumitkrsaha
-        email = sumit@notvalid.in
+        name = sumit
+        email = sumit.saha@notvaliddomain.com
 [core]
-        editor = code --wait
+        # editor = code --wait
+        editor = vim
         autocrlf = input
         fscache = true
         symlinks = false
