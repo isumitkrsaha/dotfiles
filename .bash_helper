@@ -45,14 +45,15 @@ shopt -s cmdhist
 # History substitution are not immediately passed to the shell parser.
 shopt -s histappend histverify
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-# fi
-# unset color_prompt force_color_prompt
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 # eval "$('/c/Users/sumit/.miniconda3/Scripts/conda.exe' 'shell.bash' 'hook')"
 # <<< conda initialize <<<
+
+# >>> on debian server only
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\e[91m\] $(parse_git_branch)\[\e[00m\]$ '
+# <<< end
